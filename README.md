@@ -38,7 +38,7 @@ A structured machine learning workflow for credit card fraud detection, encompas
 
 This project builds an end-to-end binary classification pipeline to detect fraudulent credit card transactions. The dataset is heavily imbalanced (0.52% fraud), which shapes nearly every decision in the pipeline - from the choice of evaluation metric (PR-AUC over accuracy) to the modeling approach (tree-based ensembles with class-weighting) to the validation strategy (a chronological split instead of a random one, to avoid leaking future information into time-based features).
 
-The full workflow - cleaning, EDA, feature engineering, cross validation, and hyperparameter tuning - is contained in a single Jupyter notebook: [`fraud_analytics.ipynb`](./fraud_analytics.ipynb).
+The full workflow - cleaning, EDA, feature engineering, cross validation, and hyperparameter tuning - is contained in a single Jupyter notebook: [`analytics_modelling_fraud.ipynb`](./analytics_modelling_fraud.ipynb).
 
 ## Problem Statement
 
@@ -62,7 +62,7 @@ The train and test files are merged for shared preprocessing/feature engineering
 
 ```
 .
-├── fraud_analytics.ipynb   # Main notebook: cleaning, EDA, feature engineering, modeling
+├── analytics_modelling_fraud.ipynb   # Main notebook: cleaning, EDA, feature engineering, modeling
 ├── requirements.txt        # Python dependencies
 └── README.md
 ```
@@ -215,10 +215,10 @@ pip install -r requirements.txt
 
 ### Usage
 
-Open and run `fraud_analytics.ipynb` top to bottom in Jupyter or JupyterLab:
+Open and run `analytics_modelling_fraud.ipynb` top to bottom in Jupyter or JupyterLab:
 
 ```bash
-jupyter notebook fraud_analytics.ipynb
+jupyter notebook analytics_modelling_fraud.ipynb
 ```
 
 The dataset downloads automatically via `kagglehub` on the first data-loading cell - no manual download required.
