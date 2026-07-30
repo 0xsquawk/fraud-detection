@@ -239,18 +239,18 @@ The dataset downloads automatically via `kagglehub` on the first data-loading ce
 
 ## Revision History
 
-| Date | Author | Changes |
-|---|---|---|
-| 2026-07-30 | Charchit (@0xSquawk) | Added precision-recall threshold search; no threshold satisfies precision > 0.85 and recall > 0.90 together, fell back to default 0.5 threshold |
-| 2026-07-29 | Charchit (@0xSquawk) | Refit tuned XGBoost pipeline on full training set, generated final classification report, confusion matrix and PR-AUC on the held-out test set, pulled feature importances |
-| 2026-07-28 | Charchit (@0xSquawk) | Replaced the fixed-hyperparameter CV pass with `RandomizedSearchCV` across Random Forest, XGBoost and Decision Tree; XGBoost selected as best performer |
-| 2026-07-27 | Charchit (@0xSquawk) | First cross-validation pass (Random Forest / XGBoost / Decision Tree) using `TimeSeriesSplit` on a 100k-row stratified sample; merged development into main |
-| 2026-07-26 | Charchit (@0xSquawk) | Finalized chronological 70/30 train/test split, dropped identifier columns, frequency-encoded `merchant`/`job`/`city` using train-only statistics; merged development into main |
-| 2026-07-25 | Charchit (@0xSquawk) | Added behavioral/velocity features - rolling 1h/24h transaction counts, 30-day rolling mean/std and spend z-score, `is_new_history` flag, haversine `distance_km`, `age`, cumulative `txns_rolling_count` |
-| 2026-07-24 | Charchit (@0xSquawk) | Extracted `hour`, `day_of_week`, `is_weekend` from the transaction timestamp and analyzed fraud rate by hour/day; merged development into main |
-| 2026-07-23 | Charchit (@0xSquawk) | Added bivariate/multivariate analysis - amount distributions by class, fraud rate by amount quartile, fraud rate by category/merchant, correlation matrix |
-| 2026-07-22 | Charchit (@0xSquawk) | Added univariate analysis - skewness/kurtosis, Shapiro-Wilk normality test, pie charts of top categorical values among fraud transactions, IQR/boxplot outlier comparison |
-| 2026-07-21 | Charchit (@0xSquawk) | Initial notebook setup - loaded `fraudTrain.csv`/`fraudTest.csv` via kagglehub, merged into a single frame with a `source` flag, dropped `Unnamed: 0`, cast date columns, checked nulls/duplicates, stripped `fraud_` prefix from `merchant` |
+| Date | Changes |
+|---|---|
+| 2026-07-30 | Added precision-recall threshold search; no threshold satisfies precision > 0.85 and recall > 0.90 together, fell back to default 0.5 threshold |
+| 2026-07-29 | Refit tuned XGBoost pipeline on full training set, generated final classification report, confusion matrix and PR-AUC on the held-out test set, pulled feature importances |
+| 2026-07-28 | Replaced the fixed-hyperparameter CV pass with `RandomizedSearchCV` across Random Forest, XGBoost and Decision Tree; XGBoost selected as best performer |
+| 2026-07-27 | First cross-validation pass (Random Forest / XGBoost / Decision Tree) using `TimeSeriesSplit` on a 100k-row stratified sample; merged development into main |
+| 2026-07-26 | Finalized chronological 70/30 train/test split, dropped identifier columns, frequency-encoded `merchant`/`job`/`city` using train-only statistics; merged development into main |
+| 2026-07-25 | Added behavioral/velocity features - rolling 1h/24h transaction counts, 30-day rolling mean/std and spend z-score, `is_new_history` flag, haversine `distance_km`, `age`, cumulative `txns_rolling_count` |
+| 2026-07-24 | Extracted `hour`, `day_of_week`, `is_weekend` from the transaction timestamp and analyzed fraud rate by hour/day; merged development into main |
+| 2026-07-23 | Added bivariate/multivariate analysis - amount distributions by class, fraud rate by amount quartile, fraud rate by category/merchant, correlation matrix |
+| 2026-07-22 | Added univariate analysis - skewness/kurtosis, Shapiro-Wilk normality test, pie charts of top categorical values among fraud transactions, IQR/boxplot outlier comparison |
+| 2026-07-21 | Initial notebook setup - loaded `fraudTrain.csv`/`fraudTest.csv` via kagglehub, merged into a single frame with a `source` flag, dropped `Unnamed: 0`, cast date columns, checked nulls/duplicates, stripped `fraud_` prefix from `merchant` |
 
 ## License
 
