@@ -254,4 +254,4 @@ The dataset downloads automatically via `kagglehub` on the first data-loading ce
 
 ## License
 
-This project is provided for educational and portfolio purposes. Add a license of your choice (e.g., MIT) if you intend to distribute or accept contributions.
+This project is licensed under the MIT License. See the LICENSE file for details.
