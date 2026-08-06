@@ -1,4 +1,4 @@
-# Credit Card Fraud Detection Model | Fraud Analytics
+# Credit Card Fraud Detection: An Imbalanced Classification Pipeline
 
 A structured machine learning workflow for credit card fraud detection, encompassing data cleaning, exploratory data analysis, feature engineering, cross validation, and hyperparameter tuning.
 
